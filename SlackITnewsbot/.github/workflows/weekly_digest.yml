@@ -1,0 +1,35 @@
+name: Weekly IT News Digest
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # 毎週月曜 09:00 JST（UTC 0:00）
+  workflow_dispatch: {}
+
+permissions:
+  contents: write  # posted_history.json / cost_log.json をコミット・pushするために必要
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python main.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          SLACK_ADMIN_USER_ID: ${{ secrets.SLACK_ADMIN_USER_ID }}
+          QIITA_ACCESS_TOKEN: ${{ secrets.QIITA_ACCESS_TOKEN }}
+          # 承認が下りてSecretsが実値になるまではDRY_RUN=1のままにしておく
+          DRY_RUN: '1'
+      - name: Commit updated posted_history.json / cost_log.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posted_history.json cost_log.json
+          git diff --cached --quiet || git commit -m "chore: update posted_history.json / cost_log.json"
+          git push

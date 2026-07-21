@@ -1,0 +1,21 @@
+name: Key Rotation Reminder
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # 毎月1日にチェック（実際の通知は半年経過時のみ）
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install slack_sdk
+      - run: python check_key_rotation.py
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_ADMIN_USER_ID: ${{ secrets.SLACK_ADMIN_USER_ID }}
+          DRY_RUN: '1'

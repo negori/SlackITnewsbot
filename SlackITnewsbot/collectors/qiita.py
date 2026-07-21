@@ -1,0 +1,56 @@
+"""Qiita記事の収集（GET /api/v2/items）"""
+from datetime import datetime, timedelta, timezone
+
+import requests
+
+import config
+
+QIITA_API = "https://qiita.com/api/v2/items"
+
+
+def _headers() -> dict:
+    if config.QIITA_ACCESS_TOKEN:
+        return {"Authorization": f"Bearer {config.QIITA_ACCESS_TOKEN}"}
+    return {}
+
+
+def fetch(days: int = 7) -> list[dict]:
+    since = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d")
+    params = {"query": f"created:>{since}", "page": 1, "per_page": 100}
+
+    try:
+        resp = requests.get(QIITA_API, headers=_headers(), params=params, timeout=15)
+        resp.raise_for_status()
+        items = resp.json()
+    except Exception as e:  # noqa: BLE001 - 収集失敗はBot全体を止めない
+        print(f"[qiita] fetch failed: {e}")
+        return []
+
+    articles = []
+    for item in items:
+        articles.append(
+            {
+                "id": f"qiita:{item['id']}",
+                "title": item.get("title", ""),
+                "url": item.get("url", ""),
+                "source": "Qiita",
+                "published_at": item.get("created_at", ""),
+                "summary_raw": (item.get("rendered_body") or "")[:200],
+                "popularity_score": item.get("likes_count", 0),
+                "body_text": None,
+            }
+        )
+    return articles
+
+
+def fetch_body(article: dict) -> str:
+    """選定後の記事のみ、詳細APIから本文を取得する"""
+    item_id = article["id"].split(":", 1)[1]
+    try:
+        resp = requests.get(f"{QIITA_API}/{item_id}", headers=_headers(), timeout=15)
+        resp.raise_for_status()
+        body = resp.json().get("body", "")
+        return body[: config.BODY_TRUNCATE_CHARS]
+    except Exception as e:  # noqa: BLE001
+        print(f"[qiita] fetch_body failed for {article.get('url')}: {e}")
+        return article.get("summary_raw", "")
