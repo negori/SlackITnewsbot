@@ -3,7 +3,7 @@ name: Weekly IT News Digest
 on:
   schedule:
     # TODO: cronのテスト実行が確認できたら '0 0 * * 1'（毎週月曜 09:00 JST）に戻すこと
-    - cron: '30 15 * * 6'  # テスト用: 毎週日曜 00:30 JST（UTC土曜15:30）
+    - cron: '15 16 * * 6'  # テスト用: 毎週日曜 01:15 JST（UTC土曜16:15）
   workflow_dispatch: {}
 
 permissions:
