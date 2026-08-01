@@ -9,6 +9,10 @@ on:
 permissions:
   contents: write  # posted_history.json / cost_log.json をコミット・pushするために必要
 
+defaults:
+  run:
+    working-directory: SlackITnewsbot
+
 jobs:
   digest:
     runs-on: ubuntu-latest
