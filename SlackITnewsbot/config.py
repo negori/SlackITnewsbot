@@ -27,6 +27,11 @@ QIITA_ACCESS_TOKEN = os.environ.get("QIITA_ACCESS_TOKEN") or None
 # 本番投入時は GitHub Secrets 側で DRY_RUN=0 を明示的に設定すること。
 DRY_RUN = os.environ.get("DRY_RUN", "1") != "0"
 
+# SKIP_CLAUDE=1の場合、Claude APIによる選定・要約を行わず、候補記事の上位を
+# そのままダミー要約で投稿する（GitHub Actionsのcronトリガー・Slack投稿部分の
+# 動作確認用。API残高を消費せずに自動実行の疎通確認ができる）。
+SKIP_CLAUDE = os.environ.get("SKIP_CLAUDE", "0") == "1"
+
 # --- モデル ---
 MODEL_SCREENING = "claude-sonnet-5"                    # 候補選定・Web検索・重複除外
 MODEL_SUMMARY = "claude-haiku-4-5-20251001"             # 記事要約
@@ -35,7 +40,7 @@ WEB_SEARCH_TOOL_TYPE = "web_search_20260209"
 # --- 選定・投稿件数 ---
 CANDIDATE_LIMIT = 50
 MIN_SELECTED = 3
-MAX_SELECTED = 10
+MAX_SELECTED = 8
 
 # --- 重複除外の履歴保持期間（週） ---
 HISTORY_WEEKS = 3

@@ -56,8 +56,12 @@ def main() -> None:
     posted_history = history.load_history()
     print(f"[main] loaded {len(posted_history)} posted_history entries")
 
-    print("[main] screening candidates (Sonnet 5 + web search)...")
-    selected = claude_client.screen_candidates(candidates, posted_history)
+    if config.SKIP_CLAUDE:
+        print("[main] SKIP_CLAUDE enabled: skipping Claude API selection/summarization")
+        selected = candidates[: config.MIN_SELECTED]
+    else:
+        print("[main] screening candidates (Sonnet 5 + web search)...")
+        selected = claude_client.screen_candidates(candidates, posted_history)
     print(f"[main] {len(selected)} articles selected")
 
     enriched = []
@@ -65,14 +69,17 @@ def main() -> None:
         article = find_by_id(candidates, item.get("id", "")) or dict(item)
         article["selection_reason"] = item.get("selection_reason", "")
         article["body_text"] = fetch_body(article)
-        article["summary"] = claude_client.summarize_article(article)
+        if config.SKIP_CLAUDE:
+            article["summary"] = "[テスト投稿] Claude APIを使わずに生成したダミー要約です。"
+        else:
+            article["summary"] = claude_client.summarize_article(article)
         if article["summary"]:
             enriched.append(article)
         else:
             print(f"[main] skipping article with empty summary: {article.get('url')}")
 
-    slack_poster.post_digest(enriched)
-    if not config.DRY_RUN:
+    posted = slack_poster.post_digest(enriched)
+    if posted:
         history.append_history(enriched)
 
     weekly_cost = cost_tracker.finalize_and_log()

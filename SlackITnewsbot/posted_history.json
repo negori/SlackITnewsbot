@@ -1,1 +1,52 @@
-[]
+[
+  {
+    "title": "セブン＆アイ、共通会員IDのPayPay統合を正式発表　ソフトバンクや三井住友カードなどが計3000億円出資",
+    "url": "https://www.itmedia.co.jp/news/article/2607/31/2000000345/",
+    "posted_at": "2026-08-01"
+  },
+  {
+    "title": "アスクル、個人情報の漏えい懸念が約134万件に　新たに約60万件特定",
+    "url": "https://www.itmedia.co.jp/news/article/2607/31/2000000327/",
+    "posted_at": "2026-08-01"
+  },
+  {
+    "title": "Claudeも3組織に不正アクセス　実在システムを「演習の一部」と誤認　Anthropicが経緯を公表",
+    "url": "https://www.itmedia.co.jp/news/article/2607/31/2000000334/",
+    "posted_at": "2026-08-01"
+  },
+  {
+    "title": "Samsung expects memory shortage to worsen through 2027 and last until 2028",
+    "url": "https://techcrunch.com/2026/07/31/samsung-expects-memory-shortage-to-worsen-through-2027-and-last-until-2028/",
+    "posted_at": "2026-08-01"
+  },
+  {
+    "title": "OpenAI、「GPT-5.6」のAPI料金を最大80%値下げ　最安Lunaは100万トークン0.2ドルに",
+    "url": "https://japan.cnet.com/article/35251176/",
+    "posted_at": "2026-08-01"
+  },
+  {
+    "title": "Google nixes its Earth AI feature one day after launch, amid criticism it would spread misinformation",
+    "url": "https://techcrunch.com/2026/07/31/google-nixes-its-earth-ai-feature-one-day-after-launch-amid-criticism-it-would-spread-misinformation/",
+    "posted_at": "2026-08-01"
+  },
+  {
+    "title": "OpenAI reportedly finds evidence that more of its agents ran amok",
+    "url": "https://techcrunch.com/2026/07/31/openai-reportedly-finds-evidence-that-more-of-its-agents-ran-amok/",
+    "posted_at": "2026-08-01"
+  },
+  {
+    "title": "Meta sinks 8%, Microsoft jumps 15% as the AI trade splits Big Tech",
+    "url": "https://www.cnbc.com/2026/07/30/microsoft-msft-meta-stock-today-earnings.html",
+    "posted_at": "2026-08-01"
+  },
+  {
+    "title": "AI フレンドリーな CLI を開発するテクニック",
+    "url": "https://zenn.dev/shunsuke_suzuki/articles/make-cli-ai-friendly",
+    "posted_at": "2026-08-01"
+  },
+  {
+    "title": "GitHubにスタック型プルリクエストが登場。gh stackでPRを分割して積み上げよう",
+    "url": "https://zenn.dev/ubie_dev/articles/gh-stack-introduction",
+    "posted_at": "2026-08-01"
+  }
+]

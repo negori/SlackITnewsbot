@@ -2,7 +2,8 @@ name: Weekly IT News Digest
 
 on:
   schedule:
-    - cron: '0 0 * * 1'  # 毎週月曜 09:00 JST（UTC 0:00）
+    # TODO: cronのテスト実行が確認できたら '0 0 * * 1'（毎週月曜 09:00 JST）に戻すこと
+    - cron: '30 15 * * 6'  # テスト用: 毎週日曜 00:30 JST（UTC土曜15:30）
   workflow_dispatch: {}
 
 permissions:
@@ -24,8 +25,9 @@ jobs:
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
           SLACK_ADMIN_USER_ID: ${{ secrets.SLACK_ADMIN_USER_ID }}
           QIITA_ACCESS_TOKEN: ${{ secrets.QIITA_ACCESS_TOKEN }}
-          # 承認が下りてSecretsが実値になるまではDRY_RUN=1のままにしておく
-          DRY_RUN: '1'
+          # TODO: cronのテスト実行が確認できたらDRY_RUN=1に戻し、SKIP_CLAUDEの行は削除すること
+          DRY_RUN: '0'
+          SKIP_CLAUDE: '1'  # テスト用: Claude APIを使わずダミー要約でSlack投稿だけ確認する
       - name: Commit updated posted_history.json / cost_log.json
         run: |
           git config user.name "github-actions[bot]"
