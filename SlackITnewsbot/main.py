@@ -72,7 +72,8 @@ def main() -> None:
             print(f"[main] skipping article with empty summary: {article.get('url')}")
 
     slack_poster.post_digest(enriched)
-    history.append_history(enriched)
+    if not config.DRY_RUN:
+        history.append_history(enriched)
 
     weekly_cost = cost_tracker.finalize_and_log()
     print(f"[main] weekly cost (estimated): ${weekly_cost:.4f}")

@@ -7,6 +7,10 @@
 """
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()  # ローカルの .env を読み込む（GitHub Actions では .env が存在しないため無視される）
+
 # --- 必須（本番投入前に実キーへの差し替えが必要） ---
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "sk-ant-placeholder-not-set")
 SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN", "xoxb-placeholder-not-set")

@@ -47,7 +47,10 @@ def _usage_dict(response) -> dict:
 
 
 def _extract_text(response) -> str:
-    return "\n".join(block.text for block in response.content if block.type == "text").strip()
+    # Web検索ツール使用時は「検索前の一言」等の中間textブロックが挟まるため、
+    # 最終回答である最後のtextブロックのみを使う（全結合すると前置きとJSONが混ざる）。
+    text_blocks = [block.text for block in response.content if block.type == "text"]
+    return text_blocks[-1].strip() if text_blocks else ""
 
 
 def _call_with_retry(max_retries: int = 2, backoffs: tuple[float, ...] = (0.5, 1.0), **kwargs):
@@ -71,7 +74,7 @@ def screen_candidates(candidates: list[dict], posted_history: list[dict]) -> lis
     kwargs = dict(
         model=config.MODEL_SCREENING,
         max_tokens=4000,
-        tools=[{"type": config.WEB_SEARCH_TOOL_TYPE}],
+        tools=[{"type": config.WEB_SEARCH_TOOL_TYPE, "name": "web_search"}],
         messages=[{"role": "user", "content": prompt}],
     )
 
