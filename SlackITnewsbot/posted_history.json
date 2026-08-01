@@ -48,5 +48,20 @@
     "title": "GitHubにスタック型プルリクエストが登場。gh stackでPRを分割して積み上げよう",
     "url": "https://zenn.dev/ubie_dev/articles/gh-stack-introduction",
     "posted_at": "2026-08-01"
+  },
+  {
+    "title": "個人開発で踏みやすいパフォーマンス・アンチパターン 5 点 — Prisma N+1 から useMemo 漏れまで",
+    "url": "https://qiita.com/teppei19980914/items/8d0ec908a7943725ec98",
+    "posted_at": "2026-08-01"
+  },
+  {
+    "title": "【AWS】Managed Knowledge Baseでの検索フィルターを確認しました",
+    "url": "https://qiita.com/yakumo_09/items/e3442f0e25976aa73afe",
+    "posted_at": "2026-08-01"
+  },
+  {
+    "title": "Elevators",
+    "url": "https://john.fun/elevators",
+    "posted_at": "2026-08-01"
   }
 ]
