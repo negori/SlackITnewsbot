@@ -18,7 +18,12 @@ def _headers() -> dict:
 def fetch(days: int = 7) -> list[dict]:
     """直近days日以内に作成されたQiita記事を取得し、共通フォーマットの辞書リストで返す。
     この時点では本文全体は取らず、一覧APIのレスポンスに含まれる情報だけを使う
-    （本文は選定後にfetch_body()で改めて取得する）。"""
+    （本文は選定後にfetch_body()で改めて取得する）。
+
+    Qiita APIは「作成日時が新しい順」で返してくるため、そのままだと
+    投稿直後でまだいいねが付いていない記事も大量に混ざってしまう。
+    そこで取得後にいいね数（likes_count）順で並べ直し、上位
+    config.QIITA_TOP_N件だけに絞り込んでから返す。"""
     since = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d")
     params = {"query": f"created:>{since}", "page": 1, "per_page": 100}
 
@@ -44,7 +49,10 @@ def fetch(days: int = 7) -> list[dict]:
                 "body_text": None,  # 選定後にfetch_body()で埋める
             }
         )
-    return articles
+
+    # いいね数の多い順に並べ替えて、上位のみを候補としてscorer.pyに渡す
+    articles.sort(key=lambda a: a["popularity_score"], reverse=True)
+    return articles[: config.QIITA_TOP_N]
 
 
 def fetch_body(article: dict) -> str:

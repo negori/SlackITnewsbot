@@ -42,6 +42,17 @@ WEB_SEARCH_TOOL_TYPE = "web_search_20260209"           # claude_client.pyでSonn
 # --- 選定・投稿件数 ---
 CANDIDATE_LIMIT = 50   # scorer.pyが絞り込む候補記事の件数（この中からSonnet 5が選ぶ）
 MIN_SELECTED = 3       # 1回の投稿の最低本数（プロンプト上の目安。SKIP_CLAUDEモードでもこの件数を使う）
+
+# --- 収集段階での人気度フィルタ ---
+# Qiitaは「直近7日間の新着」を最大100件取得するが、投稿直後でいいねが
+# 付いていない記事も大量に混ざるため、いいね数上位のみに絞ってから
+# scorer.pyに渡す（できたばかりの記事が「その週のQiita内では相対的にマシ」
+# なだけで候補に残ってしまうのを防ぐ）。
+QIITA_TOP_N = 30
+# HackerNewsは元々「topstories」という人気順アルゴリズムのランキングを使っているため
+# 実質的にすでに人気記事のみだが、念のため取得後にscore（ポイント数）順で並べ直してから
+# 上位のみ残す。
+HACKERNEWS_TOP_N = 30
 MAX_SELECTED = 8       # 1回の投稿の最大本数（claude_client.pyでこれを超えた分は切り捨てる）
 
 # --- 重複除外の履歴保持期間（週） ---

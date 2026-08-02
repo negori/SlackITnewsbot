@@ -3,6 +3,8 @@ from datetime import datetime, timezone
 
 import requests
 
+import config
+
 TOPSTORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json"
 ITEM_URL = "https://hacker-news.firebaseio.com/v0/item/{item_id}.json"
 
@@ -11,7 +13,12 @@ def fetch(limit: int = 60) -> list[dict]:
     """Hacker Newsのトップ記事ID一覧を取得し、上位limit件について
     記事詳細（タイトル・URL・スコア等）を1件ずつ取得して返す。
     HackerNews API自体には「まとめて取得」する手段が無いため、記事数分だけ
-    リクエストが飛ぶ点に注意（=遅くなりやすい）。"""
+    リクエストが飛ぶ点に注意（=遅くなりやすい）。
+
+    topstories.jsonはHackerNews独自の人気順アルゴリズム（投票数＋時間減衰）で
+    並んでいるため、この時点で既に実質的に人気記事のみと言える。念のため
+    取得後にscore（素の投票ポイント数）順で並べ直し、上位config.HACKERNEWS_TOP_N件
+    だけに絞り込んでから返す。"""
     try:
         resp = requests.get(TOPSTORIES_URL, timeout=15)
         resp.raise_for_status()
@@ -47,7 +54,10 @@ def fetch(limit: int = 60) -> list[dict]:
                 "body_text": None,  # 選定後にfetch_body()で埋める
             }
         )
-    return articles
+
+    # score（投票ポイント数）の多い順に並べ替えて、上位のみを候補としてscorer.pyに渡す
+    articles.sort(key=lambda a: a["popularity_score"], reverse=True)
+    return articles[: config.HACKERNEWS_TOP_N]
 
 
 def fetch_body(article: dict) -> str:
