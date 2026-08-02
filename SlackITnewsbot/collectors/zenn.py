@@ -1,11 +1,24 @@
 """Zenn記事の収集（公式APIが無いため feed を使用）"""
 import feedparser
+from dateutil import parser as date_parser
 
 import config
 
 
+def _sort_key(article: dict):
+    """公開日時でソートするためのキー関数。パース失敗時は最も古い扱いにして
+    末尾に回す（後段のtop-N切り詰めで真っ先に落ちるようにする）。"""
+    try:
+        return date_parser.parse(article["published_at"])
+    except (ValueError, TypeError, KeyError):
+        return date_parser.parse("1970-01-01T00:00:00Z")
+
+
 def fetch() -> list[dict]:
-    """ZennのRSSフィードから最近の記事一覧を取得し、共通フォーマットの辞書リストで返す。"""
+    """ZennのRSSフィードから最近の記事一覧を取得し、共通フォーマットの辞書リストで返す。
+
+    Zennには人気度データが無いため、公開日時が新しい順に並べ替えて
+    上位config.ZENN_TOP_N件だけを残す（RSS系ソースと同様の絞り込み）。"""
     try:
         feed = feedparser.parse(config.ZENN_FEED)
     except Exception as e:  # noqa: BLE001
@@ -32,7 +45,9 @@ def fetch() -> list[dict]:
                 "body_text": entry.get("summary") or None,  # フィードのsummaryをそのまま本文代わりに使う
             }
         )
-    return articles
+
+    articles.sort(key=_sort_key, reverse=True)
+    return articles[: config.ZENN_TOP_N]
 
 
 def fetch_body(article: dict) -> str:

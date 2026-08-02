@@ -42,18 +42,22 @@ WEB_SEARCH_TOOL_TYPE = "web_search_20260209"           # claude_client.pyでSonn
 # --- 選定・投稿件数 ---
 CANDIDATE_LIMIT = 50   # scorer.pyが絞り込む候補記事の件数（この中からSonnet 5が選ぶ）
 MIN_SELECTED = 3       # 1回の投稿の最低本数（プロンプト上の目安。SKIP_CLAUDEモードでもこの件数を使う）
-
-# --- 収集段階での人気度フィルタ ---
-# Qiitaは「直近7日間の新着」を最大100件取得するが、投稿直後でいいねが
-# 付いていない記事も大量に混ざるため、いいね数上位のみに絞ってから
-# scorer.pyに渡す（できたばかりの記事が「その週のQiita内では相対的にマシ」
-# なだけで候補に残ってしまうのを防ぐ）。
-QIITA_TOP_N = 30
-# HackerNewsは元々「topstories」という人気順アルゴリズムのランキングを使っているため
-# 実質的にすでに人気記事のみだが、念のため取得後にscore（ポイント数）順で並べ直してから
-# 上位のみ残す。
-HACKERNEWS_TOP_N = 30
 MAX_SELECTED = 8       # 1回の投稿の最大本数（claude_client.pyでこれを超えた分は切り捨てる）
+
+# --- 収集段階での絞り込み ---
+# scorer.pyでのスコアリングは最終的にCANDIDATE_LIMIT件に絞るが、それ以前の
+# 生収集の時点でノイズの多いソースを間引いておく。理由は主に2つ:
+#   1) 人気度データがある場合は、投稿直後でまだ人気が付いていない記事を
+#      早い段階で除外できる（Qiita）
+#   2) 人気度データが無く鮮度で代替スコアを付けるソース（HackerNews以外の
+#      RSS系・Zenn）は、大量の直近記事が横並びでほぼ満点になりがちなので、
+#      件数を絞ってCANDIDATE_LIMIT枠を圧迫しすぎないようにする
+# なお、ここで絞ってもSonnet 5に渡すプロンプト量（＝コスト）自体は変わらない
+# （CANDIDATE_LIMITで既に固定されているため）。狙いはあくまで最終候補の質。
+QIITA_TOP_N = 30       # いいね数順の上位N件（Qiita）
+HACKERNEWS_TOP_N = 30  # score（ポイント数）順の上位N件（HackerNewsは元々人気順なので念のため）
+RSS_TOP_N = 20         # 公開日時が新しい順の上位N件（RSS_FEEDS各ソースに個別適用）
+ZENN_TOP_N = 20        # 公開日時が新しい順の上位N件（Zenn）
 
 # --- 重複除外の履歴保持期間（週） ---
 HISTORY_WEEKS = 3
