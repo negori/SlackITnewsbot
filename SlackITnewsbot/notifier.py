@@ -2,6 +2,11 @@
 
 ユーザーIDを chat.postMessage の channel にそのまま渡すとDM相当になる
 （追加のBot Token Scopeは不要。chat:write のみで動作する）。
+
+用途は3つ:
+  - 週次のコスト概算通知（毎回）
+  - 月次のコスト概算通知（月が変わった直後のみ）
+  - APIキーのローテーション時期の通知（check_key_rotation.pyから呼ばれる）
 """
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
@@ -14,6 +19,9 @@ def _client() -> WebClient:
 
 
 def _send(text: str) -> None:
+    """DRY_RUN中は実際には送らずログ出力のみ。
+    本番実行時は失敗してもエラーで止めず、ログに残すだけにする
+    （通知の失敗でBot本体の処理（投稿・履歴更新等）を巻き込みたくないため）。"""
     if config.DRY_RUN:
         print(f"[notifier] (DRY_RUN) would DM {config.SLACK_ADMIN_USER_ID}: {text}")
         return

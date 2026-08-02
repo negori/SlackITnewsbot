@@ -33,14 +33,16 @@ DRY_RUN = os.environ.get("DRY_RUN", "1") != "0"
 SKIP_CLAUDE = os.environ.get("SKIP_CLAUDE", "0") == "1"
 
 # --- モデル ---
+# 選定（Web検索を伴う複雑な判断）には性能重視のSonnet 5、
+# 要約（単純な文章生成）にはコスト重視のHaiku 4.5、と使い分けている。
 MODEL_SCREENING = "claude-sonnet-5"                    # 候補選定・Web検索・重複除外
 MODEL_SUMMARY = "claude-haiku-4-5-20251001"             # 記事要約
-WEB_SEARCH_TOOL_TYPE = "web_search_20260209"
+WEB_SEARCH_TOOL_TYPE = "web_search_20260209"           # claude_client.pyでSonnet 5に渡すWeb検索ツールの種類
 
 # --- 選定・投稿件数 ---
-CANDIDATE_LIMIT = 50
-MIN_SELECTED = 3
-MAX_SELECTED = 8
+CANDIDATE_LIMIT = 50   # scorer.pyが絞り込む候補記事の件数（この中からSonnet 5が選ぶ）
+MIN_SELECTED = 3       # 1回の投稿の最低本数（プロンプト上の目安。SKIP_CLAUDEモードでもこの件数を使う）
+MAX_SELECTED = 8       # 1回の投稿の最大本数（claude_client.pyでこれを超えた分は切り捨てる）
 
 # --- 重複除外の履歴保持期間（週） ---
 HISTORY_WEEKS = 3
@@ -70,4 +72,6 @@ KEY_ROTATION_PATH = "key_rotation.json"
 KEY_ROTATION_MONTHS = 6
 
 # --- 記事本文の切り詰め文字数 ---
+# 要約プロンプトに渡す本文が長すぎるとトークン代がかさむため、
+# 取得した本文をこの文字数で切り詰めてからClaudeに渡す。
 BODY_TRUNCATE_CHARS = 8000
