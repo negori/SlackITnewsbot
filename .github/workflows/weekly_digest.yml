@@ -2,7 +2,7 @@ name: Weekly IT News Digest
 
 on:
   schedule:
-    - cron: '0 0 * * 1'  # 毎週月曜 09:00 JST（UTC 0:00）
+    - cron: '0 0 * * *'  # 毎朝 09:00 JST（UTC 0:00）
   workflow_dispatch: {}
 
 permissions:
@@ -28,8 +28,12 @@ jobs:
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
           SLACK_ADMIN_USER_ID: ${{ secrets.SLACK_ADMIN_USER_ID }}
           QIITA_ACCESS_TOKEN: ${{ secrets.QIITA_ACCESS_TOKEN }}
-          # ANTHROPIC_API_KEY登録・動作確認が終わるまではDRY_RUN=1のままにしておく
-          DRY_RUN: '1'
+          # 社内承認済みのANTHROPIC_API_KEYがまだ無いため、Claude API呼び出しは
+          # 一旦スキップし（SKIP_CLAUDE=1）、Slack投稿・履歴・コスト記録など
+          # それ以外の疎通のみ確認する。ANTHROPIC_API_KEY登録が完了したら
+          # SKIP_CLAUDEの行を削除すること
+          DRY_RUN: '0'
+          SKIP_CLAUDE: '1'
       - name: Commit updated posted_history.json / cost_log.json
         run: |
           git config user.name "github-actions[bot]"
