@@ -2,7 +2,10 @@ name: Weekly IT News Digest
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 毎朝 09:00 JST（UTC 0:00）
+    # 毎週金曜 08:00 JST（UTC木曜23:00）に起動。GitHub Actionsのスケジュールは
+    # best-effortで実行が遅れることがある（実測で1~2.5時間程度）ため、
+    # 金曜09:00 JSTの投稿を確実にするために1時間早い08:00 JSTをトリガー時刻にしている
+    - cron: '0 23 * * 4'
   workflow_dispatch: {}
 
 permissions:
