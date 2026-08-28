@@ -1,145 +1,5 @@
 [
   {
-    "title": "セブン＆アイ、共通会員IDのPayPay統合を正式発表　ソフトバンクや三井住友カードなどが計3000億円出資",
-    "url": "https://www.itmedia.co.jp/news/article/2607/31/2000000345/",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "アスクル、個人情報の漏えい懸念が約134万件に　新たに約60万件特定",
-    "url": "https://www.itmedia.co.jp/news/article/2607/31/2000000327/",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "Claudeも3組織に不正アクセス　実在システムを「演習の一部」と誤認　Anthropicが経緯を公表",
-    "url": "https://www.itmedia.co.jp/news/article/2607/31/2000000334/",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "Samsung expects memory shortage to worsen through 2027 and last until 2028",
-    "url": "https://techcrunch.com/2026/07/31/samsung-expects-memory-shortage-to-worsen-through-2027-and-last-until-2028/",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "OpenAI、「GPT-5.6」のAPI料金を最大80%値下げ　最安Lunaは100万トークン0.2ドルに",
-    "url": "https://japan.cnet.com/article/35251176/",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "Google nixes its Earth AI feature one day after launch, amid criticism it would spread misinformation",
-    "url": "https://techcrunch.com/2026/07/31/google-nixes-its-earth-ai-feature-one-day-after-launch-amid-criticism-it-would-spread-misinformation/",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "OpenAI reportedly finds evidence that more of its agents ran amok",
-    "url": "https://techcrunch.com/2026/07/31/openai-reportedly-finds-evidence-that-more-of-its-agents-ran-amok/",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "Meta sinks 8%, Microsoft jumps 15% as the AI trade splits Big Tech",
-    "url": "https://www.cnbc.com/2026/07/30/microsoft-msft-meta-stock-today-earnings.html",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "AI フレンドリーな CLI を開発するテクニック",
-    "url": "https://zenn.dev/shunsuke_suzuki/articles/make-cli-ai-friendly",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "GitHubにスタック型プルリクエストが登場。gh stackでPRを分割して積み上げよう",
-    "url": "https://zenn.dev/ubie_dev/articles/gh-stack-introduction",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "個人開発で踏みやすいパフォーマンス・アンチパターン 5 点 — Prisma N+1 から useMemo 漏れまで",
-    "url": "https://qiita.com/teppei19980914/items/8d0ec908a7943725ec98",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "【AWS】Managed Knowledge Baseでの検索フィルターを確認しました",
-    "url": "https://qiita.com/yakumo_09/items/e3442f0e25976aa73afe",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "Elevators",
-    "url": "https://john.fun/elevators",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "個人開発で踏みやすいパフォーマンス・アンチパターン 5 点 — Prisma N+1 から useMemo 漏れまで",
-    "url": "https://qiita.com/teppei19980914/items/8d0ec908a7943725ec98",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "Elevators",
-    "url": "https://john.fun/elevators",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "Sam Altman is still making the case for parenting via ChatGPT",
-    "url": "https://techcrunch.com/2026/08/01/sam-altman-is-still-making-the-case-for-parenting-via-chatgpt/",
-    "posted_at": "2026-08-01"
-  },
-  {
-    "title": "50音を全部作って繋いだのに、（　´∀｀）になった話",
-    "url": "https://qiita.com/taguchi_sapeet/items/f2da1003b168b52f5770",
-    "posted_at": "2026-08-04"
-  },
-  {
-    "title": "新しい Copilot Studio が GA したので「ハーネス」とクレジット課金体系を改めて整理してみる",
-    "url": "https://qiita.com/Takashi_Masumori/items/e6f1678b41483943fc04",
-    "posted_at": "2026-08-04"
-  },
-  {
-    "title": "Don't be a meat proxy",
-    "url": "https://gruhn.me/blog/2026-08-03/",
-    "posted_at": "2026-08-04"
-  },
-  {
-    "title": "ずぼらAI駆動開発、爆誕",
-    "url": "https://qiita.com/nobu34/items/224f55bc85b813930f61",
-    "posted_at": "2026-08-05"
-  },
-  {
-    "title": "LLMs reward expertise",
-    "url": "https://www.seangoedecke.com/llms-reward-expertise/",
-    "posted_at": "2026-08-05"
-  },
-  {
-    "title": "DJI、マイク本体に最長28時間録音できる「Mic Mini 2S」発売",
-    "url": "https://japan.cnet.com/article/35251301/",
-    "posted_at": "2026-08-05"
-  },
-  {
-    "title": "AI が原因を当てても、「思いついた」わけじゃない —— 推論の3分類で見分ける",
-    "url": "https://qiita.com/jqit_suwa/items/aefb1adac27a34646cf3",
-    "posted_at": "2026-08-06"
-  },
-  {
-    "title": "Discovery Loop",
-    "url": "https://www.discoveryloop.com/",
-    "posted_at": "2026-08-06"
-  },
-  {
-    "title": "中国製ルーター20機種にバックドア、外部から完全制御のおそれ",
-    "url": "https://japan.cnet.com/article/35251353/",
-    "posted_at": "2026-08-06"
-  },
-  {
-    "title": "40万件のAI承認を分析したら、見逃し率が3倍違った — 危ないものほど、ちゃんと止められている",
-    "url": "https://qiita.com/jqit_suwa/items/ac7d1201bd14e9a4e1ac",
-    "posted_at": "2026-08-07"
-  },
-  {
-    "title": "Discovery Loop",
-    "url": "https://www.discoveryloop.com/",
-    "posted_at": "2026-08-07"
-  },
-  {
-    "title": "Metaに約900億円の支払い命令、子どものSNS被害めぐる裁判で",
-    "url": "https://japan.cnet.com/article/35251406/",
-    "posted_at": "2026-08-07"
-  },
-  {
     "title": "GPT 5.6 on Bedrockでサーバーサイドツールを使う with AgentCoreゲートウェイ",
     "url": "https://qiita.com/moritalous/items/1968a359d8eb54585421",
     "posted_at": "2026-08-08"
@@ -198,5 +58,20 @@
     "title": "KDDI、日本発スタートアップの米国進出を支援する新プログラム　第1期はAI新興5社",
     "url": "https://japan.cnet.com/article/35251785/",
     "posted_at": "2026-08-20"
+  },
+  {
+    "title": "Claude Code の Auto mode を解剖する ― 誰が、どんなルールで許可を出しているのか",
+    "url": "https://qiita.com/tatsuya582/items/cf74c9b6fc9c370e67e6",
+    "posted_at": "2026-08-28"
+  },
+  {
+    "title": "Nvidia agrees to acquire Hugging Face for $13B",
+    "url": "https://www.businessinsider.com/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars-2026-8",
+    "posted_at": "2026-08-28"
+  },
+  {
+    "title": "PC価格高騰、限られたIT予算をどう回す？　“再生PC”を選んだ企業のシステム担当者に聞く",
+    "url": "https://www.itmedia.co.jp/news/article/2608/28/2000000847/",
+    "posted_at": "2026-08-28"
   }
 ]
