@@ -42,7 +42,14 @@ WEB_SEARCH_TOOL_TYPE = "web_search_20260209"           # claude_client.pyでSonn
 # --- 選定・投稿件数 ---
 CANDIDATE_LIMIT = 50   # scorer.pyが絞り込む候補記事の件数（この中からSonnet 5が選ぶ）
 MIN_SELECTED = 3       # 1回の投稿の最低本数（プロンプト上の目安。SKIP_CLAUDEモードでもこの件数を使う）
-MAX_SELECTED = 8       # 1回の投稿の最大本数（claude_client.pyでこれを超えた分は切り捨てる）
+MAX_SELECTED = 3       # 1回の投稿の最大本数（claude_client.pyでこれを超えた分は切り捨てる）
+
+# --- Claude API呼び出し時のmax_tokens ---
+# screen_candidates()はWeb検索ツールを使うエージェント的な呼び出しのため、
+# 検索クエリ・中間の思考テキストもこのmax_tokensに含まれて消費される。
+# 4000では検索を挟むと最終JSON出力の途中で打ち切られ、JSONパースに
+# 失敗するケースがあったため、余裕を持たせている。
+SCREENING_MAX_TOKENS = 16000
 
 # --- 収集段階での絞り込み ---
 # scorer.pyでのスコアリングは最終的にCANDIDATE_LIMIT件に絞るが、それ以前の

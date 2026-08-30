@@ -101,7 +101,7 @@ def screen_candidates(candidates: list[dict], posted_history: list[dict]) -> lis
 
     kwargs = dict(
         model=config.MODEL_SCREENING,
-        max_tokens=4000,
+        max_tokens=config.SCREENING_MAX_TOKENS,
         tools=[{"type": config.WEB_SEARCH_TOOL_TYPE, "name": "web_search"}],
         messages=[{"role": "user", "content": prompt}],
     )
