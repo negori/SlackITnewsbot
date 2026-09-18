@@ -1,20 +1,5 @@
 [
   {
-    "title": "Claude Code の Auto mode を解剖する ― 誰が、どんなルールで許可を出しているのか",
-    "url": "https://qiita.com/tatsuya582/items/cf74c9b6fc9c370e67e6",
-    "posted_at": "2026-08-28"
-  },
-  {
-    "title": "Nvidia agrees to acquire Hugging Face for $13B",
-    "url": "https://www.businessinsider.com/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars-2026-8",
-    "posted_at": "2026-08-28"
-  },
-  {
-    "title": "PC価格高騰、限られたIT予算をどう回す？　“再生PC”を選んだ企業のシステム担当者に聞く",
-    "url": "https://www.itmedia.co.jp/news/article/2608/28/2000000847/",
-    "posted_at": "2026-08-28"
-  },
-  {
     "title": "ChatGPT・Copilot・Gemini… 業務視点でどう選べるか？ ChatAI 13 製品を「8つの独自指標」で比較してみた｜中小企業・管理職のための導入判断ガイド",
     "url": "https://qiita.com/songchong/items/78a9d9c28506ff90d331",
     "posted_at": "2026-09-04"
@@ -43,5 +28,20 @@
     "title": "「AIは人類を絶滅させかねない」--元Anthropic研究者の告発が1.5億回閲覧　現役幹部も「彼は正しい」",
     "url": "https://japan.cnet.com/article/35252528/",
     "posted_at": "2026-09-11"
+  },
+  {
+    "title": "「共生社会」は誰が我慢するのか？ ― 外国人材・企業責任・ルール遵守を考える : システム設計視点の行動経済学 (30)",
+    "url": "https://qiita.com/maskot1977/items/053e3c37272015b4913d",
+    "posted_at": "2026-09-18"
+  },
+  {
+    "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
+    "url": "https://github.com/arnegiacomo/fugleramme",
+    "posted_at": "2026-09-18"
+  },
+  {
+    "title": "Khosla-backed Mazama Energy just raised $135M to drill deeper into super-hot-rock geothermal",
+    "url": "https://techcrunch.com/2026/09/17/khosla-backed-mazama-energy-just-raised-135m-to-drill-deeper-into-super-hot-rock-geothermal/",
+    "posted_at": "2026-09-18"
   }
 ]
