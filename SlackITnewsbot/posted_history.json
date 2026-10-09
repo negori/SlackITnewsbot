@@ -1,20 +1,5 @@
 [
   {
-    "title": "「共生社会」は誰が我慢するのか？ ― 外国人材・企業責任・ルール遵守を考える : システム設計視点の行動経済学 (30)",
-    "url": "https://qiita.com/maskot1977/items/053e3c37272015b4913d",
-    "posted_at": "2026-09-18"
-  },
-  {
-    "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
-    "url": "https://github.com/arnegiacomo/fugleramme",
-    "posted_at": "2026-09-18"
-  },
-  {
-    "title": "Khosla-backed Mazama Energy just raised $135M to drill deeper into super-hot-rock geothermal",
-    "url": "https://techcrunch.com/2026/09/17/khosla-backed-mazama-energy-just-raised-135m-to-drill-deeper-into-super-hot-rock-geothermal/",
-    "posted_at": "2026-09-18"
-  },
-  {
     "title": "管理業務～私の実践～②",
     "url": "https://qiita.com/wawasaki2468/items/4591be7133e2f9d1d3cd",
     "posted_at": "2026-09-25"
@@ -43,5 +28,20 @@
     "title": "Robotaxi operators will face fines for blocking first responders",
     "url": "https://techcrunch.com/2026/10/01/robotaxi-operators-will-face-fines-for-blocking-first-responders/",
     "posted_at": "2026-10-02"
+  },
+  {
+    "title": "【学習メモ】EC2からS3へのアクセスを例に、AWS IAMを整理する",
+    "url": "https://qiita.com/ito_kohhh/items/3063faabb4731fae880b",
+    "posted_at": "2026-10-09"
+  },
+  {
+    "title": "Claude Code のカスタムスラッシュコマンド(.claude/commands)を自作する実装手順 — !`cmd` が展開されない・$1 と $ARGUMENTS の分割・サブディレクトリで名前が衝突、3つのハマりどころ【2026】",
+    "url": "https://qiita.com/yureki_lab/items/4c677da1c146932070a7",
+    "posted_at": "2026-10-09"
+  },
+  {
+    "title": "24時間動かすPythonボットで、Windowsターミナルがメモリを7.5GB食っていた話と対策",
+    "url": "https://qiita.com/minipc_lab/items/6b234bf607deb13c5493",
+    "posted_at": "2026-10-09"
   }
 ]
