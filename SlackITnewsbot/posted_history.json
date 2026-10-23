@@ -1,20 +1,5 @@
 [
   {
-    "title": "耳で聞く！Python で学ぶ マクロ経済学 入門 22",
-    "url": "https://qiita.com/maskot1977/items/c1505f8570cac80dcc78",
-    "posted_at": "2026-10-02"
-  },
-  {
-    "title": "Gemini 4 Argon",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
-    "posted_at": "2026-10-02"
-  },
-  {
-    "title": "Robotaxi operators will face fines for blocking first responders",
-    "url": "https://techcrunch.com/2026/10/01/robotaxi-operators-will-face-fines-for-blocking-first-responders/",
-    "posted_at": "2026-10-02"
-  },
-  {
     "title": "【学習メモ】EC2からS3へのアクセスを例に、AWS IAMを整理する",
     "url": "https://qiita.com/ito_kohhh/items/3063faabb4731fae880b",
     "posted_at": "2026-10-09"
@@ -43,5 +28,20 @@
     "title": "When it came to Cal AI’s viral success, a small army of influencers paid off",
     "url": "https://techcrunch.com/2026/10/15/when-it-came-to-cal-ais-viral-success-a-small-army-of-influencers-paid-off/",
     "posted_at": "2026-10-16"
+  },
+  {
+    "title": "〖AI News まとめ〗生成AI ニュースレポート — 2026-10-23",
+    "url": "https://qiita.com/aakan/items/eaf80742b12e74a29622",
+    "posted_at": "2026-10-23"
+  },
+  {
+    "title": "Haiku 5.5 に書かせた確信度は当てになるか。同じ306問を3回聞いたら、1問ずつはぶれても0.8以上は8割当たった",
+    "url": "https://qiita.com/suwa_nobu/items/8dec346a727f0199fefb",
+    "posted_at": "2026-10-23"
+  },
+  {
+    "title": "AI時代に、あえてC#/.NETを選ぶ理由 ― 脆弱性対応を一続きのプロセスにする",
+    "url": "https://qiita.com/tomokusaba/items/52ada0610a129f09c344",
+    "posted_at": "2026-10-23"
   }
 ]
