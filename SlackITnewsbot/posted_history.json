@@ -1,20 +1,5 @@
 [
   {
-    "title": "耳で聞く！Python で学ぶ マクロ経済学 入門 38",
-    "url": "https://qiita.com/maskot1977/items/0d1584080ce9733c48b1",
-    "posted_at": "2026-10-30"
-  },
-  {
-    "title": "Patrick Stewart has died",
-    "url": "https://www.nytimes.com/2026/10/29/arts/television/patrick-stewart-dead.html",
-    "posted_at": "2026-10-30"
-  },
-  {
-    "title": "ヤクルト本社、個人情報約4万件漏えい　公式サイトへの不正アクセスで",
-    "url": "https://www.itmedia.co.jp/news/article/2610/30/2000002739/",
-    "posted_at": "2026-10-30"
-  },
-  {
     "title": "2026年11月6日 今日のQiitaトレンド記事をポッドキャストで聴こう！",
     "url": "https://qiita.com/ennagara128/items/f20ec4b1f63037568468",
     "posted_at": "2026-11-06"
@@ -43,5 +28,20 @@
     "title": "緊急情報の音声放送システムにランサムウェア攻撃　滋賀県甲賀市、屋外拡声器など使えず",
     "url": "https://www.itmedia.co.jp/news/article/2611/13/2000003167/",
     "posted_at": "2026-11-13"
+  },
+  {
+    "title": "オプショナルチェイニングでもTypeErrorになる3つの境界：階層・括弧・関数をNode.jsで実測",
+    "url": "https://qiita.com/ennagara128/items/e5f6fc635bd4a31dd010",
+    "posted_at": "2026-11-20"
+  },
+  {
+    "title": "2026年11月20日 今日のQiitaトレンド記事をポッドキャストで聴こう！",
+    "url": "https://qiita.com/ennagara128/items/2367588703fbee1cf6bb",
+    "posted_at": "2026-11-20"
+  },
+  {
+    "title": "Unauthenticated remote code execution in Nginx",
+    "url": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
+    "posted_at": "2026-11-20"
   }
 ]
