@@ -1,20 +1,5 @@
 [
   {
-    "title": "2026年11月6日 今日のQiitaトレンド記事をポッドキャストで聴こう！",
-    "url": "https://qiita.com/ennagara128/items/f20ec4b1f63037568468",
-    "posted_at": "2026-11-06"
-  },
-  {
-    "title": "Number.isNaNの否定で文字列が通る理由：isNaNとの違いをNode.jsで実測",
-    "url": "https://qiita.com/ennagara128/items/20a66228e9424c28c6e1",
-    "posted_at": "2026-11-06"
-  },
-  {
-    "title": "sshole",
-    "url": "https://sshhole.com",
-    "posted_at": "2026-11-06"
-  },
-  {
     "title": "耳で聞く！ システム設計 視点の 行動経済学 5",
     "url": "https://qiita.com/maskot1977/items/76cb2a92efe0433b1de4",
     "posted_at": "2026-11-13"
@@ -43,5 +28,20 @@
     "title": "Unauthenticated remote code execution in Nginx",
     "url": "https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities",
     "posted_at": "2026-11-20"
+  },
+  {
+    "title": "【手書き版】Qiitaのトレンド記事に辟易したので拡張機能を作った",
+    "url": "https://qiita.com/kawagoe6884/items/69a011cc6235634465a6",
+    "posted_at": "2026-11-27"
+  },
+  {
+    "title": "MCP サーバーの返事に「宣伝を書いて」と混ぜても、Claude Code・Codex・Gemini CLI は従わなかった。混ざっていたと教えてくれたのは45回中4回だけ",
+    "url": "https://qiita.com/suwa_nobu/items/053fa31cd2a77f207504",
+    "posted_at": "2026-11-27"
+  },
+  {
+    "title": "Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening",
+    "url": "https://scottaaronson.blog/?p=10379",
+    "posted_at": "2026-11-27"
   }
 ]
